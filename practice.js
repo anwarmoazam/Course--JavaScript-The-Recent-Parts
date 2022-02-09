@@ -4,8 +4,10 @@ console.log("Course--JavaScript: The Recent Parts");
 
 function formatCurrency(string,...values){
     var str = "";
+    console.log(string);
     console.log(values);
     for(let i=0; i<string.length; i++){
+        console.log(`Value of i ${string[i]}`);
         if(i>1) {
             if(typeof values[i-1] == "number") {
                 str += `$${values[i-1].toFixed(2)}`;
@@ -47,9 +49,9 @@ var tmp;
 ] = tmp = data();
 
 
-console.log(first);
+// console.log(first);
 
-console.log(second);
+// console.log(second);
 
 
 // Object Destructuring
@@ -65,11 +67,11 @@ var {
 } = obj = data1();
 
 
-console.log(obj);
-console.log(first);
-console.log(second);
-console.log(third);
-console.log(fourth);
+// console.log(obj);
+// console.log(first);
+// console.log(second);
+// console.log(third);
+// console.log(fourth);
 
 
 // Further Destructuring
@@ -82,7 +84,7 @@ var defaults = {
     ]
 }
 
-console.log(defaults)
+// console.log(defaults)
 
 var settings = {
     url: "http://some.other.url/",
@@ -113,4 +115,4 @@ function ajaxOptions({
 
 defaults = ajaxOptions();
 
-console.log(defaults);
+// console.log(defaults);
