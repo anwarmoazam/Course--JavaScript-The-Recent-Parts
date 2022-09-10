@@ -148,4 +148,56 @@ arr = [10,20,NaN,30,40,50];
 console.log(arr.indexOf(30) != -1 );
 console.log(~arr.indexOf(20));
 
+var obj = {
+    a: 1,
+    b: 2,
+    c: 3,
+    *[Symbol.iterator](){
+        for(let key of Object.keys(this)){
+            yield this[key];
+        }
+    }
+};
 
+console.log([...obj]);
+
+var obj1 = {
+    a: 10,
+    b: 20,
+    c: 30
+}
+
+console.log(obj1)
+
+// Self Iterator
+
+var arr = [100,200,300,400,500];
+
+function myIterator(arr){
+    nextNum = 0;
+    return{
+        next(){
+            if(nextNum < arr.length){
+                return{
+                    value : arr[nextNum++],
+                    done : false
+                }
+            }else{
+                return{
+                    value : arr[nextNum],
+                    done : true
+                }
+            }
+            
+        }
+    }
+}
+
+let num = myIterator(arr);
+console.log(num.next());
+console.log(num.next());
+console.log(num.next());
+
+// Symbol.Iterator 
+let result = arr[Symbol.iterator]();
+console.log(result.next());
