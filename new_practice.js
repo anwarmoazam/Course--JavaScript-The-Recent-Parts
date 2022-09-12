@@ -201,3 +201,23 @@ console.log(num.next());
 // Symbol.Iterator 
 let result = arr[Symbol.iterator]();
 console.log(result.next());
+
+// Generators
+
+function *print(){
+        yield 1;
+        yield 2;
+        yield 3;   
+        return 4;
+}
+
+const output = print();
+console.log(output.next());
+console.log(output.next());
+console.log(output.next());
+console.log(output.next());
+console.log(output.next());
+console.log(output.next());
+console.log(output.next());
+
+
